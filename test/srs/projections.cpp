@@ -195,7 +195,8 @@ void test_all()
     test_forward<P>("oea", 4.897000, 52.371000, 545723.850088, 5058869.127694, "+proj=oea +ellps=WGS84 +units=m +lat_1=20n +lat_2=60n +lon_1=1e +lon_2=30e +m=1 +n=1");
     test_forward<P>("omerc", 4.897000, 52.371000, 1009705.329154, 5829437.254923, "+proj=omerc +ellps=WGS84 +units=m +lat_1=20n +lat_2=60n  +lon_1=1e +lon_2=30e");
     test_forward<P>("ortel", 4.897000, 52.371000, 360906.947408, 5829913.052335, "+proj=ortel +ellps=WGS84 +units=m");
-    test_forward<P>("ortho", 4.897000, 52.371000, 332422.874291, 5051361.531375, "+proj=ortho +ellps=WGS84 +units=m");
+    test_forward<P>("ortho", 4.897000, 52.371000, 332422.874291, 5051361.531375, "+proj=ortho +ellps=WGS84 +units=m +f=0");
+    test_forward<P>("ortho", 4.897000, 52.371000, 333122.991583, 5028113.273309, "+proj=ortho +ellps=WGS84 +units=m");
     test_forward<P>("pconic", -70.400000, -23.650000, -2240096.398139, -6940342.146955, "+proj=pconic +ellps=WGS84 +units=m +lat_1=20n +lat_2=60n +lon_0=60W");
     test_forward<P>("qsc", 4.897000, 52.371000, 543871.545186, 7341888.620371, "+proj=qsc +ellps=WGS84 +units=m");
     test_forward<P>("poly", 4.897000, 52.371000, 333274.269648, 5815908.957562, "+proj=poly +ellps=WGS84 +units=m");
@@ -317,7 +318,8 @@ void test_all()
     test_inverse<P>("ocea", 14168517.320298, -923135.204172, 4.897000, 52.371000, "+proj=ocea +ellps=WGS84 +units=m +lat_1=20n +lat_2=60n  +lon_1=1e +lon_2=30e");
     test_inverse<P>("oea", 545723.850088, 5058869.127694, 4.897000, 52.371000, "+proj=oea +ellps=WGS84 +units=m +lat_1=20n +lat_2=60n +lon_1=1e +lon_2=30e +m=1 +n=1");
     test_inverse<P>("omerc", 1009705.329154, 5829437.254923, 4.897000, 52.371000, "+proj=omerc +ellps=WGS84 +units=m +lat_1=20n +lat_2=60n  +lon_1=1e +lon_2=30e");
-    test_inverse<P>("ortho", 332422.874291, 5051361.531375, 4.897000, 52.371000, "+proj=ortho +ellps=WGS84 +units=m");
+    test_inverse<P>("ortho", 332422.874291, 5051361.531375, 4.897000, 52.371000, "+proj=ortho +ellps=WGS84 +f=0 +units=m");
+    test_inverse<P>("ortho", 333122.991583, 5028113.273309, 4.897000, 52.371000, "+proj=ortho +ellps=WGS84 +units=m");
     test_inverse<P>("pconic", -2240096.398139, -6940342.146955, -70.400000, -23.650000, "+proj=pconic +ellps=WGS84 +units=m +lat_1=20n +lat_2=60n +lon_0=60W"); // F/I: 4424863.377843
     test_inverse<P>("qsc", 543871.545186, 7341888.620371, 4.897000, 52.371000, "+proj=qsc +ellps=WGS84 +units=m");
     test_inverse<P>("poly", 333274.269648, 5815908.957562, 4.897000, 52.371000, "+proj=poly +ellps=WGS84 +units=m");
