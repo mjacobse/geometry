@@ -9,6 +9,8 @@
 # Version 1.0. (See accompanying file LICENSE_1_0.txt or copy at
 # http://www.boost.org/LICENSE_1_0.txt)
 
+lib GeographicLib : : <name>GeographicLib ;
+
 test-suite boost-geometry-formulas
     :
     [ run inverse.cpp                        : : : : formulas_inverse ]
@@ -18,4 +20,5 @@ test-suite boost-geometry-formulas
     [ run direct_meridian.cpp                : : : : formulas_direct_meridian ]
     [ run intersection.cpp                   : : : : formulas_intersection ]
     [ run vertex_longitude.cpp               : : : : formulas_vertex_longitude ]
+    [ run run_geodesic_inverse.cpp GeographicLib : : : : run_geodesic_inverse ]
     ;
