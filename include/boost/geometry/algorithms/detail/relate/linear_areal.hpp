@@ -117,6 +117,10 @@ public:
             update<interior, interior, '1', TransposeResult>(m_result);
             m_interrupt_flags |= 1;
         }
+        else if ( pig == 0 )
+        {
+            update<interior, boundary, '1', TransposeResult>(m_result);
+        }
         else
         {
             update<interior, exterior, '1', TransposeResult>(m_result);
