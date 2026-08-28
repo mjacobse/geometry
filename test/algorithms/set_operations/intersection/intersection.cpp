@@ -411,6 +411,15 @@ void test_areal()
 //        5, 22, 1.1901714);
 
     TEST_INTERSECTION(issue_1487, 1, -1, 18983.884971862572);
+
+    Polygon issue_1487_0;
+    boost::geometry::read_wkt( issue_1487[0], issue_1487_0 );
+    Polygon issue_1487_0_simplified;
+    boost::geometry::simplify( issue_1487_0, issue_1487_0_simplified, 0.0 );
+    test_one<Polygon, Polygon, Polygon>("issue_1487_0_simplified",
+        boost::geometry::to_wkt(issue_1487_0_simplified, 17),
+        issue_1487[1],
+        1, -1, 18983.884971862572);
 }
 
 template <typename Polygon, typename Box>
